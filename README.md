@@ -1,4 +1,4 @@
-[![Available on GNOME Extensions](https://img.shields.io/badge/Available%20on-GNOME%20Extensions-green)](https://extensions.gnome.org/)
+[![Available on GNOME Extensions](https://img.shields.io/badge/Available%20on-GNOME%20Extensions-green)](https://extensions.gnome.org/extension/11461/cursor-ink/)
 
 # ![Icon](./screenshots/icon-sm.png) Cursor Ink for GNOME Shell
 
@@ -16,8 +16,7 @@ Targets GNOME Shell 48–51. Tested on GNOME Shell 51.1 with Wayland.
 
 ## Installation
 
-Install from [GNOME Extensions](https://extensions.gnome.org/)
-(recommended once published).
+Install from [GNOME Extensions](https://extensions.gnome.org/extension/11461/cursor-ink/).
 
 Or install directly from this repository:
 
