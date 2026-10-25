@@ -148,15 +148,17 @@ test('an animation that already finished is not destroyed again during disable',
     harness.assertClean();
 });
 
-test('failed parenting also destroys the ring that never became a child', () => {
+test('disable after failed parenting also destroys the ring that never became a child', () => {
     const harness = createHarness({failParenting: true});
     assert.throws(() => harness.extension.enable(), /Could not parent the ring/);
+    harness.extension.disable();
     harness.assertClean();
 });
 
 test('failed settings setup and repeated disable remain safe', () => {
     const harness = createHarness({failSettings: true});
     assert.throws(() => harness.extension.enable(), /Could not load settings/);
+    harness.extension.disable();
     harness.extension.disable();
     harness.assertClean();
 });

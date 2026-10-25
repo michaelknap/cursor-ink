@@ -10,6 +10,6 @@
   ],
   "settings-schema": "org.gnome.shell.extensions.cursor-ink",
   "url": "https://github.com/michaelknap/cursor-ink",
-  "version": 1,
-  "version-name": "0.1.0"
+  "version": 2,
+  "version-name": "0.1.1"
 }

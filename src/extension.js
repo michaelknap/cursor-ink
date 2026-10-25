@@ -17,36 +17,31 @@ export default class CursorInkExtension extends Extension {
         this._ripples = new Set();
         this._timerId = 0;
 
-        try {
-            this._settings = this.getSettings();
-            this._tracker = global.backend.get_cursor_tracker();
-            this._layer = new St.Widget({
-                name: 'cursor-ink-layer',
-                reactive: false,
-                layout_manager: new Clutter.FixedLayout(),
-            });
-            this._layer.add_constraint(new Clutter.BindConstraint({
-                source: global.stage,
-                coordinate: Clutter.BindCoordinate.SIZE,
-            }));
-            // A visual-only overlay needs no chrome/input-region tracking.
-            Main.layoutManager.uiGroup.add_child(this._layer);
+        this._settings = this.getSettings();
+        this._tracker = global.backend.get_cursor_tracker();
+        this._layer = new St.Widget({
+            name: 'cursor-ink-layer',
+            reactive: false,
+            layout_manager: new Clutter.FixedLayout(),
+        });
+        this._layer.add_constraint(new Clutter.BindConstraint({
+            source: global.stage,
+            coordinate: Clutter.BindCoordinate.SIZE,
+        }));
+        // A visual-only overlay needs no chrome/input-region tracking.
+        Main.layoutManager.uiGroup.add_child(this._layer);
 
-            this._ring = new St.Widget({name: 'cursor-ink-ring', reactive: false});
-            this._layer.add_child(this._ring);
+        this._ring = new St.Widget({name: 'cursor-ink-ring', reactive: false});
+        this._layer.add_child(this._ring);
 
-            // The layer owns these connections; destroying it disconnects them.
-            this._settings.connectObject('changed', () => this._updateSettings(),
-                this._layer);
-            this._tracker.connectObject(
-                'position-invalidated', () => this._syncPointer(),
-                'visibility-changed', () => this._syncPointer(),
-                this._layer);
-            this._updateSettings();
-        } catch (error) {
-            this.disable();
-            throw error;
-        }
+        // The layer owns these connections; destroying it disconnects them.
+        this._settings.connectObject('changed', () => this._updateSettings(),
+            this._layer);
+        this._tracker.connectObject(
+            'position-invalidated', () => this._syncPointer(),
+            'visibility-changed', () => this._syncPointer(),
+            this._layer);
+        this._updateSettings();
     }
 
     _updateSettings() {
