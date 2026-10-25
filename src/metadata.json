@@ -1,0 +1,15 @@
+{
+  "uuid": "cursor-ink@mknap.com",
+  "name": "Cursor Ink",
+  "description": "A pointer highlight ring and click ripples for presentations and screen recordings.",
+  "shell-version": [
+    "48",
+    "49",
+    "50",
+    "51"
+  ],
+  "settings-schema": "org.gnome.shell.extensions.cursor-ink",
+  "url": "https://github.com/michaelknap/cursor-ink",
+  "version": 1,
+  "version-name": "0.1.0"
+}

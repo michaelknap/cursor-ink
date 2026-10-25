@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.cursor-ink" path="/org/gnome/shell/extensions/cursor-ink/">
+    <key name="show-ring" type="b">
+      <default>true</default>
+      <summary>Show a ring around the pointer</summary>
+    </key>
+    <key name="show-clicks" type="b">
+      <default>true</default>
+      <summary>Animate mouse clicks</summary>
+    </key>
+    <key name="ring-size" type="i">
+      <range min="20" max="160"/>
+      <default>44</default>
+      <summary>Ring diameter in logical pixels</summary>
+    </key>
+    <key name="ring-width" type="i">
+      <range min="1" max="12"/>
+      <default>3</default>
+      <summary>Ring border thickness in logical pixels</summary>
+    </key>
+    <key name="ring-color" type="s">
+      <default>'#FFD54F'</default>
+      <summary>Highlight color, in #RRGGBB format</summary>
+    </key>
+    <key name="click-duration" type="i">
+      <range min="120" max="900"/>
+      <default>320</default>
+      <summary>Ripple duration in milliseconds</summary>
+    </key>
+  </schema>
+</schemalist>
